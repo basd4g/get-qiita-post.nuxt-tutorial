@@ -3,7 +3,7 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        nuxt-tutorial
+        Hello,world!
       </h1>
       <h2 class="subtitle">
         Nuxt.js Tutorial Project
