@@ -1,11 +1,13 @@
 # dependencies
-node_modules
+#node_modules
 
 # logs
-npm-debug.log
+#npm-debug.log
 
 # Nuxt build
-.nuxt
+#.nuxt
 
 # Nuxt generate
-dist
+#dist
+
+.envrc

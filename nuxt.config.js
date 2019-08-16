@@ -26,6 +26,14 @@ module.exports = {
 
   },
 
+  //add QIITA_TOKEN
+  plugins: [
+    '~/plugins/axios.js'
+  ],
+  env : {
+    QIITA_TOKEN: process.env.QIITA_TOKEN
+  },
+
   /*
   ** Build configuration
   */
