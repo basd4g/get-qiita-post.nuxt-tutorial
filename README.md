@@ -1,11 +1,11 @@
-# get-qiita-post.nuxt-tutorial
+# chapter02-qiita-post.nuxt-tutorial
 
 ## Overview
 
 This is web application to get Qiita's post of tag 'Nuxt.js' , 
 and Nuxt.js tutorial project.
 
-Write code based on the book 'Nuxt.js ビギナーズガイド' in this project.
+Write code based on the book 'Nuxt.js ビギナーズガイド' pp.27-59 in this project.
 
 On commit message, 'pXX hogehoge' mean 'To implement hogehoge on p. XX of the book.'
 
@@ -18,8 +18,8 @@ Get Qiita's access token.Scope 'read_qiita' is required.
 
 ### Clone Repository
 
-    $ git clone https://github.com/basd4g/get-qiita-post.nuxt-tutorial.git
-    $ cd get-qiita-post.nuxt-tutorial/
+    $ git clone https://github.com/basd4g/chapter02-qiita-post.nuxt-tutorial.git
+    $ cd chapter02-qiita-post.nuxt-tutorial/
 
 ### Set Qiita token to environment variable
 
