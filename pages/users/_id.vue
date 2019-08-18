@@ -23,18 +23,40 @@
   </section>
 </template>
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   head(){
     return {
       title: this.user.id
     }
   },
-  async asyncData({ route, app }){
-    const user = await app.$axios.$get(`https://qiita.com/api/v2/users/${route.params.id}`)
-    const items = 
-      await app.$axios.$get(`https://qiita.com/api/v2/items?query=user:${route.params.id}`)
-    return { user,items }
+  async asyncData({ route, store, redirect }){
+    if(store.getters['users'][route.params.id]){
+      return
+    }
+    try {
+      await store.dispatch('fetchUserInfo', { id: route.params.id })
+    } catch(e) {
+      console.log("Redirect to '/'")
+      console.log( e.message )
+      redirect('/')
+    }
+  },
+  computed: {
+    user() {
+      return this.$store.state.users[this.$route.params.id]
+      //dataではなくVuexのstateを参照している サンプルコードと異なる
+      // userid of undefined を参照した旨のエラー回避
+    },
+    items() {
+    return this.$store.state.userItems[this.$route.params.id] || []
+      //dataではなくVuexのstateを参照している サンプルコードと異なる
+      // userid of undefined を参照した旨のエラー回避
   }
+},
+
+  ...mapGetters(['users','userItems'])
 }
 </script>
 <style>
