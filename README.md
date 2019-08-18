@@ -1,30 +1,48 @@
-# nuxt-tutorial
+# get-qiita-post.nuxt-tutorial
 
-> Nuxt.js Tutorial Project
+## Overview
 
-Write code based on the Book 'Nuxt.js ビギナーズガイド' in this project.
+This is web application to get Qiita's post of tag 'Nuxt.js' , 
+and Nuxt.js tutorial project.
+
+Write code based on the book 'Nuxt.js ビギナーズガイド' in this project.
 
 On commit message, 'pXX hogehoge' mean 'To implement hogehoge on p. XX of the book.'
 
-## Build Setup
+## How to use
 
-``` bash
-# install dependencies
-$ npm install # Or yarn install
+### Get Qiita token
 
-# serve with hot reload at localhost:3000
-$ npm run dev
+Get Qiita's access token.Scope 'read_qiita' is required.  
+(Qiita アクセストークンの発行)[https://qiita.com/settings/tokens/new]
 
-# build for production and launch server
-$ npm run build
-$ npm start
+### Clone Repository
 
-# generate static project
-$ npm run generate
-```
+    $ git clone https://github.com/basd4g/get-qiita-post.nuxt-tutorial.git
+    $ cd get-qiita-post.nuxt-tutorial/
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+### Set Qiita token to environment variable
+
+    # Install direnv for macOSX.
+    $ brew install direnv 
+    $ echo 'eval "$(direnv hook bash)"' >> ~/.bashrc
+
+    # Make .envrc and load it.
+    $ touch .envrc
+    # For example, Qiita token is '0123456789abcdef',
+    $ echo "export QIITA_TOKEN=<0123456789abcdef>" > .envrc
+    $ direnv allow
+
+### Build and Run
+
+    # If you didn't install yarn,
+    $ brew install yarn
+
+    $ yarn
+    $ yarn run dev
+    # And Open 'http://localhost:3000/' on web browswer.
 
 ## Reference
 
 - [Nuxt.js ビギナーズガイド](https://nuxt-beginners-guide.elevenback.jp)
+- [ステート | Vuex](https://vuex.vuejs.org/ja/guide/state.html)
